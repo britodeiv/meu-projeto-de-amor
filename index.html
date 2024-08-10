@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Garota</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
+
+<body>
+
+    <div id="bg-music-control">
+        <button onclick="toggleMusic()">Tocar Música</button>
+        <button onclick="nextMusic()">Próxima Música</button>
+    </div>
+
+
+
+
+    <header class="hero">
+        <h1 class="animate__animated animate__fadeInDown">Para Minha Garota</h1>
+        <p class="animate__animated animate__fadeInUp">Um lugar especial para você, com todo meu amor.</p>
+    </header>
+
+
+    <section class="together-time">
+        <h2 class="animate__animated animate__fadeInLeft">Tempo Juntos</h2>
+        <div id="time-together" class="animate__animated animate__fadeInUp"></div>
+    </section>
+
+
+    <section class="timeline">
+        <h2 class="animate__animated animate__fadeInLeft">Nossa História</h2>
+
+        <div class="timeline-container">
+            <div class="timeline-item animate__animated animate__zoomIn">
+                <img src="assets/foto1.jpeg" alt="Momento 1" class="thumbnail" onclick="openModal(this.src)">
+                <p>O dia em que nos conhecemos.</p>
+            </div>
+            <div class="timeline-item animate__animated animate__zoomIn">
+                <img src="assets/foto2.jpeg" alt="Momento 2" class="thumbnail" onclick="openModal(this.src)">
+                <p>Nosso segundo encontro.</p>
+            </div>
+            <div class="timeline-item animate__animated animate__zoomIn">
+                <img src="assets/foto3.jpeg" alt="Momento 3" class="thumbnail" onclick="openModal(this.src)">
+                <p>Nosso primeiro ano novo juntos.</p>
+            </div>
+
+            <div class="timeline-item animate__animated animate__zoomIn">
+                <img src="assets/foto5.jpeg" alt="Momento 4" class="thumbnail" onclick="openModal(this.src)">
+                <p>Nossa primeira skin care juntos kk.</p>
+            </div>
+            <div class="timeline-item animate__animated animate__zoomIn">
+                <img src="assets/foto6.jpeg" alt="Momento 5" class="thumbnail" onclick="openModal(this.src)">
+                <p>Nossa primeira vez em um clube.</p>
+            </div>
+            <div class="timeline-item animate__animated animate__zoomIn">
+                <img src="assets/foto7.jpeg" alt="Momento 6" class="thumbnail" onclick="openModal(this.src)">
+                <p>Nossa primeira vez na igreja.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+
+
+
+    <section class="countdown">
+        <h2 class="animate__animated animate__fadeInLeft">Contagem Regressiva para o Nosso 1 Ano de Namoro</h2>
+        <div id="countdown-timer" class="animate__animated animate__fadeInUp"></div>
+    </section>
+
+
+    <section class="playlist">
+        <h2 class="animate__animated animate__fadeInLeft">Nossa Música</h2>
+        <audio controls class="animate__animated animate__fadeInUp">
+            <source src="assets/musica1.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </section>
+
+
+    <section class="love-letters">
+        <h2 class="animate__animated animate__fadeInLeft">Cartas de Amor</h2>
+        <div class="letters-container">
+            <button class="letter-button animate__animated animate__fadeInUp" onclick="openLetter('letter1')">Carta
+                1</button>
+            <button class="letter-button animate__animated animate__fadeInUp" onclick="openLetter('letter2')">Carta
+                2</button>
+            <button class="letter-button animate__animated animate__fadeInUp" onclick="openLetter('letter3')">Carta
+                3</button>
+            <button class="letter-button animate__animated animate__fadeInUp" onclick="openLetter('letter4')">Carta
+                4</button>
+
+        </div>
+    </section>
+
+
+    <div id="letterPopup" class="popup">
+        <div class="popup-content animate__animated animate__zoomIn">
+            <span class="close" onclick="closeLetter()">&times;</span>
+            <p id="letterText"></p>
+        </div>
+    </div>
+
+
+    <button id="mode-toggle" class="mode-toggle" onclick="toggleMode()">Modo Noturno</button>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
