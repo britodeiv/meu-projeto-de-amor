@@ -66,28 +66,36 @@ function toggleMode() {
 }
 
 function startCountdown() {
-    // Atualizando a data para 28 de dezembro de 2025
     const countdownDate = new Date("2025-12-28T00:00:00").getTime();
     const countdownElement = document.getElementById("countdown-timer");
 
-    setInterval(() => {
+    if (!countdownElement) {
+        console.error("Elemento de contagem regressiva não encontrado.");
+        return;
+    }
+
+    const intervalId = setInterval(() => {
         const now = new Date().getTime();
         const distance = countdownDate - now;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-        if (distance < 0) {
-            clearInterval(x);
+        // Verifique se a data já passou
+        if (distance <= 0) {
+            clearInterval(intervalId); // Para o contador
             countdownElement.innerHTML = "É hoje!";
+        } else {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
     }, 1000);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    startCountdown();
+});
 function startTogetherTime() {
     const startDate = new Date("2023-12-28T00:00:00").getTime();
     const togetherElement = document.getElementById("time-together");
