@@ -66,7 +66,8 @@ function toggleMode() {
 }
 
 function startCountdown() {
-    const countdownDate = new Date("2024-12-28T00:00:00").getTime();
+    // Atualizando a data para 28 de dezembro de 2025
+    const countdownDate = new Date("2025-12-28T00:00:00").getTime();
     const countdownElement = document.getElementById("countdown-timer");
 
     setInterval(() => {
